@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaila Sagar - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+           .sub-title{
+          text-align: center;
+          font-size:62px;
+        }
+        sub{
+            font-size: 60px;
+            font-weight: 700;
+         }
+         .tabtitles{
+            display:flex;
+            margin:20px 0 40px;
+            
+         }
+         .tablinks{
+            margin-right:50px;
+            font-size: 26px;
+            font-weight:500;
+            cursor:pointer;
+            position:relative;
+            margin-right: 70px;
+         margin-left:19px;
+         }
+       .tablinks::after{
+         content:'';
+         width:0;
+        height: 3px;
+        background: #ff004f;
+        position:absolute;
+        left:0;
+        bottom:-8px;
+        transition:0.5s;
+    }
+    .tablinks.active-link::after{
+        width:50%;
+    }
+    .tabcontents ul li{
+        list-style:none;
+        margin:10px 0;
+       }
+       .tabcontents ul li span{
+          color: #b54769;
+          font-size: 14px;
+          font-size: 21px;
+          font-weight: 400;
+         
+       }
+       .tabcontents{
+        display:none;
+       }
+       .tabcontents.active-tab{
+        display:block;
+       }
+       .box {
+    max-width: 300px;
+    margin: 29px;
+    margin-right:0;
+    padding:-5px;
+    text-align: center;
+  
+}
+
+h1 {
+    color: black;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.graph {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 100px;
+}
+
+.bar {
+    width: 30%;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 5px;
+    transition: height 0.5s;
+    
+}
+
+.bar span {
+    padding: 5px;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="sidebar sidebarGo">
+        
+         <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About me</a> </li>
+                <li><a href="https://github.com/Shailasagar?tab=repositories">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="main">
+        <div class="hamburger">
+            <img  class="ham"src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png">
+            <img  class="cross"src="https://www.pngkey.com/png/full/215-2155436_png-file-svg-cross-mark-png-black.png">
+        </div>
+        <div class="row">
+           <h1 class="sub-title">About Me</h1>
+            <p>Hi, I'm Shaila Sagar, a web developer. I have few experience in web development, specializing in HTML, CSS and JAVASCRIPT. I am a keen problem solver who loves trackling new challenges amd finding efficient solutions.</p>
+           <div class="tabtitles" >
+            <p class="tablinks active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tablinks" onclick="opentab('experience')">Experience</p>
+            <p class="tablinks" onclick="opentab('education')">Education</p>
+           </div>
+           <div class="tabcontents active-tab" id="skills">
+            <ul>
+            <li><span>UI/UX</span><br>Designing Web interfaces</li>
+            <li><span>Web Development</span><br>Frontend development</li>
+            </ul>
+            <section id="skills-graph">
+                <div class="box">
+                    <h1  class="sub">Skills Graph</h1>
+                    <div class="graph">
+                        <div class="bar" id="html-bar" style="background-color: #e34c26;">
+                            <span>HTML</span>
+                        </div>
+                        <div class="bar" id="css-bar" style="background-color: #264de4;">
+                            <span>CSS</span>
+                        </div>
+                        <div class="bar" id="js-bar" style="background-color: #f0db4f;">
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+           </div>
+           <div class="tabcontents" id="experience">
+            <ul>
+            <li><span> July 2024</span><br>Internship at Intersellite</li>
+            <li><span> June-July</span><br>Internship at ProdigyInfoTech</li>
+            <li><span> June-July</span><br>Web Development Intern at InternPe</li>
+
+            </ul>
+           </div>
+           <div class="tabcontents" id="education">
+            <ul>
+                <li><span>2023-current</span><br>Bachelors of technology at ITM University</li>
+                <li><span>2021-2023</span><br>Higher Secondary Education from DPS Jsr</li>
+            </ul>
+           </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <script>
+            var tablinks=document.getElementsByClassName("tablinks");
+            var tabcontents=document.getElementsByClassName("tabcontents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+            const skills = {
+    html: 90,  // percentage
+    css: 75,   // percentage
+    js: 60     // percentage
+};
+
+function updateGraph() {
+    document.getElementById('html-bar').style.height = `${skills.html}%`;
+    document.getElementById('css-bar').style.height = `${skills.css}%`;
+    document.getElementById('js-bar').style.height = `${skills.js}%`;
+}
+
+// Initial graph update
+updateGraph();
+
+
+        </script>
+        <script src="script.js"></script>
+        </body>
+        </html>

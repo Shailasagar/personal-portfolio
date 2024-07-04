@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaila Sagar - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            text-align: center;
+            color: black;
+            margin-bottom: 61px;
+            margin-top: 50px;
+            font-size:40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-top:  15px;
+        }
+        button{
+            background-color: #293ef3;
+            color: #fff;
+           
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 27px;
+            
+            transition: background-color 0.3s ease;
+            height:43px;
+            width:157px;
+            transition:transform 0.2s ease ;
+        }
+        button:hover {
+           background-color: white;
+           color:#293ef3;
+           transform:scale(1.1);
+        }
+        .main{
+           text-align:center;
+           font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+        }
+        .form-text{
+            color:red;
+        }
+        .form-label{
+            font-size:21px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="sidebar sidebarGo">
+        
+         <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About me</a> </li>
+                <li><a href="https://github.com/Shailasagar?tab=repositories">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="main">
+            <div class="hamburger">
+                <img  class="ham"src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png">
+                <img  class="cross"src="https://www.pngkey.com/png/full/215-2155436_png-file-svg-cross-mark-png-black.png">
+            </div>
+               <div class="contactform">
+                <h1> Contact me for Work/general Enquiries</h1>
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email and phone with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputphonenumber" class="form-label">Phone</label>
+                      <input type="phone" class="form-control" id="exampleInputphonenumber">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="isclient">
+                      <label class="form-check-label" for="isclient"> I want you to work on a project with me </label>
+                    </div>
+                    <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+               </div>
+
+        </div>
+        </div>
+        <script src="script.js"></script>
+        </body>
+        </html>
+ 
+   
